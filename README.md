@@ -4,13 +4,13 @@ A tool designed to hook into Windows applications and output named \(and anonymo
 
 ## Why?
 
-During Thick Client Penertration Testing engagements, applications occasionally utilise Named Pipes for communication between the clients and locally hosted servers.
+During Thick Client Penetration Testing engagements, applications occasionally utilise Named Pipes for communication between the clients and locally hosted servers.
 This tool was made to intercept this traffic to identify sensitive data or potential vulnerabilities.
 
 ## How?
 
-This tool utilises the Frida dynamic instumentation toolkit to hook into target processes. It then intercepts calls to the `CreateFile` and `CreateNamedPipe` Windows APIs to discern pipe file handles.
-All calls to the `ReadFile` and `WriteFile` Windows API functions are then intercepted, if the file handles corrospond to pipes, a memory dump of the pipe or input buffer contents is printed to the console.
+This tool utilises the Frida dynamic instrumentation toolkit to hook into target processes. It then intercepts calls to the `CreateFile` and `CreateNamedPipe` Windows APIs to discern pipe file handles.
+All calls to the `ReadFile` and `WriteFile` Windows API functions are then intercepted, if the file handles correspond to pipes, a memory dump of the pipe or input buffer contents is printed to the console.
 
 ![Sample output](./images/output.png)
 
